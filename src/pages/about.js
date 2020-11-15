@@ -1,10 +1,10 @@
 import React from "react"
 import MainLayout from "layout/MainLayout"
 
-const IndexPage = () => (
+const AboutPage = () => (
   <MainLayout>
-    <h1>Hello on lukbud!</h1>
+    <h1>Hello on about page!</h1>
   </MainLayout>
 )
 
-export default IndexPage
+export default AboutPage
