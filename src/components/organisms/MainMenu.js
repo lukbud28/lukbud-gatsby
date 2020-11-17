@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 // imports
 import Hamburger from "components/molecules/Hamburger"
@@ -8,6 +8,10 @@ import Hamburger from "components/molecules/Hamburger"
 const StyledNavigation = styled.nav`
   display: flex;
   justify-content: flex-end;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 5px;
 `
 

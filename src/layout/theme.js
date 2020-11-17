@@ -9,13 +9,14 @@ export const theme = {
   weights: {
     light: 300,
     regular: 400,
+    medium: 500,
     semiBold: 600,
     bold: 700,
   },
   zIndex: level => level * 100,
 }
 
-const breakpoints = {
+export const breakpoints = {
   phone: 374,
   tablet: 767,
   bigTablet: 1020,

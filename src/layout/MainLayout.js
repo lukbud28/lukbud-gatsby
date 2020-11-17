@@ -6,12 +6,14 @@ import PropTypes from "prop-types"
 
 // imports
 import MainMenu from "components/organisms/MainMenu"
+import SidebarMenu from "components/organisms/SidebarMenu"
 
 const MainLayout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <MainMenu />
+      <SidebarMenu />
       <main>{children}</main>
     </ThemeProvider>
   )

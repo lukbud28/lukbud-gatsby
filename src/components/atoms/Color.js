@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 
 const StyledSpan = styled.span`
   color: ${({ color, theme }) => theme[color]};
+  font-size: inherit;
 `
 
 const Color = ({ color, children }) => {
