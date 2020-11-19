@@ -1,6 +1,6 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import GlobalStyles from "layout/globalStyles"
+import GlobalStyles from "layout/GlobalStyles"
 import { theme } from "layout/theme"
 import PropTypes from "prop-types"
 
