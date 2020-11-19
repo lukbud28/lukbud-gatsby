@@ -40,6 +40,8 @@ const Data = [
 const Opinions = () => {
   const [isFormOpen, setFormOpenmet] = useState(false)
 
+  console.log(isFormOpen)
+
   return (
     <StyledContainer>
       <StyledOpinionsTitle>Opinie o naszej firmie:</StyledOpinionsTitle>
