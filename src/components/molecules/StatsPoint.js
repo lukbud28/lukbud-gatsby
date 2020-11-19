@@ -11,14 +11,15 @@ const StyledContainer = styled.div`
 
 const StyledPoints = styled.h1`
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.3rem;
 `
 
 const StyledPointsDiscription = styled.h3`
   text-align: center;
   font-family: "Lora";
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: ${({ theme }) => theme.grey};
+  font-weight: ${({ theme }) => theme.weights.light};
 `
 
 const StatsPoint = ({ points, pointsDiscription }) => {

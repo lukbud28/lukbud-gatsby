@@ -12,19 +12,23 @@ const StyledContainer = styled.section`
 
 const Data = [
   {
-    points: 11,
+    id: 0,
+    points: "11",
     pointsDiscription: "renera entera errato regenta",
   },
   {
-    points: 158,
+    id: 1,
+    points: "158",
     pointsDiscription: "lorem ipsum dolor sit amet",
   },
   {
-    points: 92,
+    id: 2,
+    points: "92",
     pointsDiscription: "estella esta es la violla",
   },
   {
-    points: 56,
+    id: 3,
+    points: "56",
     pointsDiscription: "it's an amazing time of us",
   },
 ]
@@ -36,6 +40,7 @@ const Stats = () => {
         <StatsPoint
           points={statsPoint.points}
           pointsDiscription={statsPoint.pointsDiscription}
+          key={statsPoint.id}
         />
       ))}
     </StyledContainer>

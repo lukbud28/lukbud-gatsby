@@ -42,38 +42,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            subsets: [`latin-ext`],
-            variants: [
-              `400`,
-              `500`,
-              `600`,
-              `700`,
-              `400i`,
-              `500i`,
-              `600i`,
-              `700i`,
-            ],
-          },
-          {
-            family: `Lora`,
-            subsets: [`latin-ext`],
-            variants: [
-              `400`,
-              `500`,
-              `600`,
-              `700`,
-              `400i`,
-              `500i`,
-              `600i`,
-              `700i`,
-            ],
-          },
-        ],
+        google: {
+          families: ["Poppins", "Lora"],
+        },
       },
     },
   ],
