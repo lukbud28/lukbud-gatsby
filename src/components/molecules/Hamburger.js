@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 const StyledHamburger = styled.button`
   display: flex;
@@ -35,12 +36,16 @@ const StyledHamburgerArm = styled.div`
   }
 `
 
-const Hamburger = () => {
+const Hamburger = ({ turnMenuOnFunc }) => {
   return (
-    <StyledHamburger>
+    <StyledHamburger onClick={turnMenuOnFunc}>
       <StyledHamburgerArm />
     </StyledHamburger>
   )
+}
+
+Hamburger.propTypes = {
+  turnMenuOnFunc: PropTypes.func.isRequired,
 }
 
 export default Hamburger

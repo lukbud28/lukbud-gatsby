@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import styled from "styled-components"
 
 const StyledForm = styled.form`
-  margin-top: 40px;
+  margin-top: 20px;
 `
 
 const StyledInput = styled.input`

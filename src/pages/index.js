@@ -5,26 +5,15 @@ import Landing from "components/sections/Landing"
 import Quote from "components/sections/Quote"
 import Stats from "components/sections/Stats"
 import Opinions from "components/sections/Opinions"
+import SEO from "components/sections/SEO"
 
 const IndexPage = () => (
   <MainLayout>
+    <SEO title="Home" />
     <Landing />
     <Quote />
     <Stats />
     <Opinions />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </MainLayout>
 )
 

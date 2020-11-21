@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
 // import { Link } from "gatsby"
 
 // imports
@@ -15,10 +17,10 @@ const StyledNavigation = styled.nav`
   padding: 5px;
 `
 
-const MainMenu = () => {
+const MainMenu = ({ turnMenuOnFunc }) => {
   return (
     <StyledNavigation>
-      <Hamburger />
+      <Hamburger turnMenuOnFunc={turnMenuOnFunc} />
 
       {/* <Link to="/">Home</Link>
       <Link to="/about">About</Link>
@@ -27,6 +29,10 @@ const MainMenu = () => {
       <Link to="/contact">Contact</Link> */}
     </StyledNavigation>
   )
+}
+
+MainMenu.propTypes = {
+  turnMenuOnFunc: PropTypes.func.isRequired,
 }
 
 export default MainMenu

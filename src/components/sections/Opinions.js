@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import clsx from "clsx"
+import { response } from "layout/theme"
 
 import OpinionsCard from "components/molecules/OpinionsCard"
 import OpinionsForm from "components/molecules/OpinionsForm"
@@ -8,11 +8,24 @@ import OpinionsForm from "components/molecules/OpinionsForm"
 const StyledContainer = styled.section`
   width: 100%;
   padding: 50px;
+  text-align: right;
+
+  @media ${response.phone} {
+    padding: 50px 80px;
+  }
 `
 
 const StyledOpinionsTitle = styled.h1`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.grey};
+  text-align: left;
+`
+
+const StyledFormOpenButton = styled.button`
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  margin: 10px 0 0;
 `
 
 const Data = [
@@ -40,15 +53,16 @@ const Data = [
 const Opinions = () => {
   const [isFormOpen, setFormOpenmet] = useState(false)
 
-  console.log(isFormOpen)
-
   return (
     <StyledContainer>
       <StyledOpinionsTitle>Opinie o naszej firmie:</StyledOpinionsTitle>
       {Data.map(opinion => (
         <OpinionsCard data={opinion} key={opinion.author} />
       ))}
-      <OpinionsForm />
+      <StyledFormOpenButton onClick={() => setFormOpenmet(!isFormOpen)}>
+        {isFormOpen ? "Nie chcę dodawać opinii" : "Dodaj opinię"}
+      </StyledFormOpenButton>
+      {isFormOpen && <OpinionsForm />}
     </StyledContainer>
   )
 }
