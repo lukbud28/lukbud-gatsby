@@ -1,23 +1,39 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react"
 import styled from "styled-components"
+import { response } from "layout/theme"
 
 const StyledFooter = styled.footer`
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media ${response.tablet} {
+    display: flex;
+    justify-content: center;
+    padding: 30px 10%;
+  }
 `
 
 const StyledFooterColumn = styled.div`
   margin-top: 8px;
   display: flex;
   flex-direction: column;
+
+  @media ${response.tablet} {
+    margin-right: 30px;
+  }
 `
 
 const StyledFooterText = styled.h5`
   font-weight: ${({ theme }) => theme.weights.regular};
   text-align: center;
   color: ${({ theme }) => theme.grey};
+
+  @media ${response.tablet} {
+    font-size: 1.4rem;
+    text-align: left;
+  }
 `
 
 const StyledLink = styled.a`
@@ -29,10 +45,10 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledFooterColumn>
-        <StyledLink href="https://facebook.com">
+        <StyledLink href="https://facebook.com" target="_blank">
           <StyledFooterText>Facebook</StyledFooterText>
         </StyledLink>
-        <StyledLink href="https://instagram.com">
+        <StyledLink href="https://instagram.com" target="_blank">
           <StyledFooterText>Instagram</StyledFooterText>
         </StyledLink>
       </StyledFooterColumn>
@@ -46,7 +62,7 @@ const Footer = () => {
       </StyledFooterColumn>
       <StyledFooterColumn>
         <StyledFooterText>
-          {new Date().getFullYear} © lukbud.site
+          {new Date().getFullYear()} © lukbud.site
         </StyledFooterText>
         <StyledFooterText>Created by Igor Patro</StyledFooterText>
       </StyledFooterColumn>

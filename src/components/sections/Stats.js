@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { response } from "layout/theme"
 
 import StatsPoint from "components/molecules/StatsPoint"
 
@@ -8,6 +9,10 @@ const StyledContainer = styled.section`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.lightgrey};
   padding: 30px 20px;
+
+  @media ${response.tablet} {
+    padding: 100px 10%;
+  }
 `
 
 const Data = [

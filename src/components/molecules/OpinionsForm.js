@@ -1,9 +1,14 @@
 import React from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
+import { response } from "layout/theme"
 
 const StyledForm = styled.form`
   margin-top: 20px;
+
+  @media ${response.tablet} {
+    margin-top: 50px;
+  }
 `
 
 const StyledInput = styled.input`
@@ -12,9 +17,16 @@ const StyledInput = styled.input`
   padding: 3px;
   font-size: 1.2rem;
   margin: 0 0 5px;
+  transition: border 0.5s;
 
   &.error {
-    background-color: red;
+    border: 2px solid red;
+  }
+
+  @media ${response.tablet} {
+    font-size: 1.6rem;
+    padding: 8px;
+    margin: 0 0 10px;
   }
 `
 
@@ -25,9 +37,15 @@ const StyledTextarea = styled.textarea`
   border: 1px solid ${({ theme }) => theme.grey};
   padding: 3px;
   font-size: 1.2rem;
+  transition: border 0.5s;
 
   &.error {
-    background-color: red;
+    border: 2px solid red;
+  }
+
+  @media ${response.tablet} {
+    font-size: 1.6rem;
+    padding: 8px;
   }
 `
 
@@ -40,6 +58,12 @@ const StyledSubmit = styled.input`
   font-size: 1.1rem;
   border: none;
   margin-bottom: 5px;
+
+  @media ${response.tablet} {
+    font-size: 1.6rem;
+    padding: 10px 80px;
+    margin-top: 20px;
+  }
 `
 
 const StyledErrorSpan = styled.span`

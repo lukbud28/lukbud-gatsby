@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { response } from "layout/theme"
 
 const StyledHamburger = styled.button`
   display: flex;
@@ -9,6 +10,11 @@ const StyledHamburger = styled.button`
   width: 40px;
   height: 30px;
   background-color: transparent;
+
+  @media ${response.tablet} {
+    width: 50px;
+    height: 40px;
+  }
 `
 
 const StyledHamburgerArm = styled.div`
@@ -16,6 +22,10 @@ const StyledHamburgerArm = styled.div`
   height: 5px;
   background-color: black;
   position: relative;
+
+  @media ${response.tablet} {
+    height: 6px;
+  }
 
   &::before,
   &::after {

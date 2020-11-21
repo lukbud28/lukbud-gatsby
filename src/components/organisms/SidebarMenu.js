@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { breakpoints } from "layout/theme"
+import { breakpoints, response } from "layout/theme"
 import { Link } from "gatsby"
 
 // imports
@@ -15,6 +15,10 @@ const StyledSidebarMenu = styled.div`
   top: 0;
   left: 0;
   padding: 5px;
+
+  @media ${response.tablet} {
+    padding: 10px;
+  }
 `
 
 const StyledTopSide = styled.div`
@@ -26,6 +30,14 @@ const StyledBottomSide = styled.div``
 const StyledLogo = styled.img`
   max-height: 30px;
   filter: grayscale(90%) contrast(60%);
+
+  @media ${response.tablet} {
+    max-height: 45px;
+  }
+
+  &:hover {
+    filter: grayscale(0%) contrast(100%);
+  }
 `
 
 const SidebarMenu = () => {

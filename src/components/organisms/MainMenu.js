@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { response } from "layout/theme"
 
 // import { Link } from "gatsby"
 
@@ -14,7 +15,10 @@ const StyledNavigation = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px;
+
+  @media ${response.tablet} {
+    padding: 10px;
+  }
 `
 
 const MainMenu = ({ turnMenuOnFunc }) => {

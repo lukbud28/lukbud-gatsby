@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { response } from "layout/theme"
 
 const StyledContainer = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ const StyledContainer = styled.div`
 const StyledPoints = styled.h1`
   text-align: center;
   font-size: 2.3rem;
+
+  @media ${response.tablet} {
+    font-size: 3.3rem;
+  }
 `
 
 const StyledPointsDiscription = styled.h3`
@@ -20,6 +25,10 @@ const StyledPointsDiscription = styled.h3`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.grey};
   font-weight: ${({ theme }) => theme.weights.light};
+
+  @media ${response.tablet} {
+    font-size: 1.7rem;
+  }
 `
 
 const StatsPoint = ({ points, pointsDiscription }) => {

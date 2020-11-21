@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { response } from "layout/theme"
 
 const StyledContainer = styled.div`
   display: flex;
@@ -14,11 +15,20 @@ const StyledQuote = styled.h2`
   font-size: 1.5rem;
   text-align: center;
   font-weight: ${({ theme }) => theme.weights.medium};
+
+  @media ${response.tablet} {
+    font-size: 2rem;
+  }
 `
 
 const StyledLink = styled(Link)`
   margin-top: 10px;
   color: ${({ theme }) => theme.secondGrey};
+
+  @media ${response.tablet} {
+    margin0-top: 30px;
+    font-size: 1.4rem;
+  }
 `
 
 const CompanyQuote = () => {

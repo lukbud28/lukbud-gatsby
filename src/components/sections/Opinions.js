@@ -19,6 +19,20 @@ const StyledOpinionsTitle = styled.h1`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.grey};
   text-align: left;
+
+  @media ${response.tablet} {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+`
+
+const StyledOpinionsContainer = styled.div`
+  @media ${response.tablet} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-column-end: end;
+  }
 `
 
 const StyledFormOpenButton = styled.button`
@@ -26,6 +40,10 @@ const StyledFormOpenButton = styled.button`
   background-color: transparent;
   text-decoration: underline;
   margin: 10px 0 0;
+
+  @media ${response.tablet} {
+    font-size: 1.5rem;
+  }
 `
 
 const Data = [
@@ -56,9 +74,11 @@ const Opinions = () => {
   return (
     <StyledContainer>
       <StyledOpinionsTitle>Opinie o naszej firmie:</StyledOpinionsTitle>
-      {Data.map(opinion => (
-        <OpinionsCard data={opinion} key={opinion.author} />
-      ))}
+      <StyledOpinionsContainer>
+        {Data.map(opinion => (
+          <OpinionsCard data={opinion} key={opinion.author} />
+        ))}
+      </StyledOpinionsContainer>
       <StyledFormOpenButton onClick={() => setFormOpenmet(!isFormOpen)}>
         {isFormOpen ? "Nie chcę dodawać opinii" : "Dodaj opinię"}
       </StyledFormOpenButton>
