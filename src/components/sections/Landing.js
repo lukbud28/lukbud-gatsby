@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { response } from "layout/theme"
 
 import HomeHeader from "components/molecules/HomeHeader"
 import HomeAnimation from "components/molecules/HomeAnimation"
@@ -11,6 +12,15 @@ const StyledContentContainer = styled.section`
     ${({ theme }) => theme.lightgrey},
     ${({ theme }) => theme.secondGrey}
   );
+
+  @media ${response.bigTablet} {
+    padding: 150px 50px 100px;
+  }
+
+  @media ${response.desktop} {
+    display: flex;
+    padding: 0 80px;
+  }
 `
 
 const Landing = () => (

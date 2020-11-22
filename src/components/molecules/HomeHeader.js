@@ -15,6 +15,22 @@ const StyledContainer = styled.div`
     margin: 100px 0 0 40px;
     width: 70%;
   }
+
+  @media ${response.bigTablet} {
+    margin: 150px 0 0 50px;
+  }
+
+  @media ${response.desktop} {
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media ${response.huge} {
+    width: 40%;
+  }
 `
 
 const StyledH1 = styled.h1`
@@ -22,6 +38,10 @@ const StyledH1 = styled.h1`
 
   @media ${response.tablet} {
     font-size: 3.3rem;
+  }
+
+  @media ${response.desktop} {
+    font-size: 3rem;
   }
 `
 
@@ -33,6 +53,10 @@ const StyledP = styled.p`
   @media ${response.tablet} {
     font-size: 1.9rem;
   }
+
+  @media ${response.desktop} {
+    font-size: 1.7rem;
+  }
 `
 
 const StyledButton = styled(Button)`
@@ -41,6 +65,11 @@ const StyledButton = styled(Button)`
   @media ${response.tablet} {
     font-size: 1.9rem;
     padding: 10px 100px;
+  }
+
+  @media ${response.desktop} {
+    font-size: 1.7rem;
+    padding: 7px 70px;
   }
 `
 
@@ -57,7 +86,13 @@ const HomeHeader = () => {
         and <Color color="blue">business</Color> talent they need.
       </StyledP>
       <Link to="/about">
-        <StyledButton color="white" background="blue" weight="bold">
+        <StyledButton
+          color="white"
+          background="blue"
+          weight="bold"
+          hoverColor="black"
+          hoverBackground="white"
+        >
           O nas
         </StyledButton>
       </Link>

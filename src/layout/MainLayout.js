@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled, { ThemeProvider } from "styled-components"
 import GlobalStyles from "layout/GlobalStyles"
-import { theme } from "layout/theme"
+import { theme, response } from "layout/theme"
 import PropTypes from "prop-types"
 import clsx from "clsx"
 
@@ -20,6 +20,12 @@ const StyledPhoneMenu = styled(PhoneMenu)`
   }
 `
 
+const StyledMain = styled.main`
+  @media ${response.desktop} {
+    margin-left: 80px;
+  }
+`
+
 const MainLayout = ({ children }) => {
   const [isPhoneMenuOpen, setPhoneMenuOpenmet] = useState(false)
 
@@ -31,8 +37,10 @@ const MainLayout = ({ children }) => {
       <GlobalStyles />
       <MainMenu turnMenuOnFunc={turnPhoneMenuOn} />
       <SidebarMenu />
-      <main>{children}</main>
-      <Footer />
+      <StyledMain>
+        {children}
+        <Footer />
+      </StyledMain>
       <StyledPhoneMenu
         className={clsx({ active: isPhoneMenuOpen })}
         turnMenuOffFunc={turnPhoneMenuOff}

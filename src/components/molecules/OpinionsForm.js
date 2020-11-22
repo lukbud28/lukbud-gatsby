@@ -9,6 +9,11 @@ const StyledForm = styled.form`
   @media ${response.tablet} {
     margin-top: 50px;
   }
+
+  @media ${response.desktop} {
+    max-width: 50%;
+    margin: 70px auto 0;
+  }
 `
 
 const StyledInput = styled.input`
@@ -18,9 +23,10 @@ const StyledInput = styled.input`
   font-size: 1.2rem;
   margin: 0 0 5px;
   transition: border 0.5s;
+  font-family: "Poppins";
 
   &.error {
-    border: 2px solid red;
+    border: 1px solid red;
   }
 
   @media ${response.tablet} {
@@ -38,9 +44,10 @@ const StyledTextarea = styled.textarea`
   padding: 3px;
   font-size: 1.2rem;
   transition: border 0.5s;
+  font-family: "Poppins";
 
   &.error {
-    border: 2px solid red;
+    border: 1px solid red;
   }
 
   @media ${response.tablet} {
@@ -58,16 +65,24 @@ const StyledSubmit = styled.input`
   font-size: 1.1rem;
   border: none;
   margin-bottom: 5px;
+  transition: color 0.5s, background-color 0.5s;
+  cursor: pointer;
 
   @media ${response.tablet} {
     font-size: 1.6rem;
     padding: 10px 80px;
     margin-top: 20px;
   }
+
+  &:hover {
+    color: black;
+    background-color: ${({ theme }) => theme.grey};
+  }
 `
 
 const StyledErrorSpan = styled.span`
   width: 100%;
+  font-size: 1.3rem;
 `
 
 const OpinionsForm = () => {

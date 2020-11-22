@@ -13,6 +13,22 @@ const StyledContainer = styled.section`
   @media ${response.phone} {
     padding: 50px 80px;
   }
+
+  @media ${response.bigTablet} {
+    padding: 100px 200px;
+  }
+
+  @media ${response.desktop} {
+    padding: 100px;
+  }
+
+  @media ${response.bigDesktop} {
+    padding: 150px;
+  }
+
+  @media ${response.huge} {
+    padding: 200px 250px;
+  }
 `
 
 const StyledOpinionsTitle = styled.h1`
@@ -32,6 +48,10 @@ const StyledOpinionsContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     grid-column-end: end;
+  }
+
+  @media ${response.desktop} {
+    grid-template-columns: repeat(3, 1fr);
   }
 `
 

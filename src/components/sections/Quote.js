@@ -11,6 +11,14 @@ const StyledContainer = styled.section`
   @media ${response.tablet} {
     padding: 100px 20%;
   }
+
+  @media ${response.desktop} {
+    padding: 150px 30%;
+  }
+
+  @media ${response.huge} {
+    padding: 200px 35%;
+  }
 `
 
 const Quote = () => {

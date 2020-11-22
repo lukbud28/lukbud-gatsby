@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import { response } from "layout/theme"
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -33,6 +34,10 @@ const StyledLink = styled(Link)`
     color: ${({ theme }) => theme.blue};
     font-weight: ${({ theme }) => theme.weights.semiBold};
   }
+
+  @media ${response.tablet} {
+    font-size: 2.8rem;
+  }
 `
 
 const StyledCancel = styled.button`
@@ -43,6 +48,11 @@ const StyledCancel = styled.button`
   position: fixed;
   top: 10px;
   right: 10px;
+
+  @media ${response.tablet} {
+    width: 45px;
+    top: 20px;
+  }
 `
 
 const StyledCancelArm = styled.div`
@@ -78,6 +88,9 @@ const PhoneMenu = ({ className, turnMenuOffFunc }) => {
         </StyledLink>
         <StyledLink to="/offer" activeClassName="active">
           Offer
+        </StyledLink>
+        <StyledLink to="/gallery" activeClassName="active">
+          Gallery
         </StyledLink>
         <StyledLink to="/contact" activeClassName="active">
           Contact

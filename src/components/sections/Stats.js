@@ -13,6 +13,18 @@ const StyledContainer = styled.section`
   @media ${response.tablet} {
     padding: 100px 10%;
   }
+
+  @media ${response.desktop} {
+    padding: 150px 15%;
+  }
+
+  @media ${response.bigDesktop} {
+    padding: 100px 15%;
+  }
+
+  @media ${response.huge} {
+    padding: 140px 15%;
+  }
 `
 
 const Data = [

@@ -9,6 +9,10 @@ const StyledContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media ${response.desktop} {
+    width: 50%;
+  }
 `
 
 const StyledImage = styled.img`

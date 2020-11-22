@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { response } from "layout/theme"
-
-// import { Link } from "gatsby"
+import { response, breakpoints } from "layout/theme"
+import { Link } from "gatsby"
 
 // imports
 import Hamburger from "components/molecules/Hamburger"
@@ -21,16 +20,65 @@ const StyledNavigation = styled.nav`
   }
 `
 
+const StyledMenuList = styled.ul`
+  list-style-type: none;
+  display: flex;
+  margin: 20px;
+`
+
+const StyledMenuListItem = styled.li``
+
+const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.grey};
+  text-decoration: none;
+  font-size: 1.8rem;
+  margin-left: 20px;
+
+  &.active {
+    color: ${({ theme }) => theme.blue};
+  }
+`
+
 const MainMenu = ({ turnMenuOnFunc }) => {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+
+  window.addEventListener("resize", () => {
+    setViewportWidth(window.innerWidth)
+  })
+
   return (
     <StyledNavigation>
-      <Hamburger turnMenuOnFunc={turnMenuOnFunc} />
-
-      {/* <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/offer">Offer</Link>
-      <Link to="/gallery">Gallery</Link>
-      <Link to="/contact">Contact</Link> */}
+      {viewportWidth >= breakpoints.desktop ? (
+        <StyledMenuList>
+          <StyledMenuListItem>
+            <StyledLink to="/" activeClassName="active">
+              Home
+            </StyledLink>
+          </StyledMenuListItem>
+          <StyledMenuListItem>
+            <StyledLink to="/about" activeClassName="active">
+              About
+            </StyledLink>
+          </StyledMenuListItem>
+          <StyledMenuListItem>
+            <StyledLink to="/offer" activeClassName="active">
+              Offer
+            </StyledLink>
+          </StyledMenuListItem>
+          <StyledMenuListItem>
+            <StyledLink to="/gallery" activeClassName="active">
+              Gallery
+            </StyledLink>
+          </StyledMenuListItem>
+          <StyledMenuListItem>
+            <StyledLink to="/contact" activeClassName="active">
+              Contact
+            </StyledLink>
+          </StyledMenuListItem>
+        </StyledMenuList>
+      ) : (
+        <Hamburger turnMenuOnFunc={turnMenuOnFunc} />
+      )}
     </StyledNavigation>
   )
 }

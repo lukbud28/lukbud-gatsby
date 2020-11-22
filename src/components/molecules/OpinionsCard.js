@@ -40,6 +40,11 @@ const StyledComment = styled.p`
     height: 80px;
     margin: 25px 0;
   }
+
+  @media ${response.desktop} {
+    font-size: 1.6rem;
+    margin: 30px 0 40px;
+  }
 `
 
 const StyledCommentInformations = styled.div`
