@@ -10,6 +10,7 @@ import MainMenu from "components/organisms/MainMenu"
 import SidebarMenu from "components/organisms/SidebarMenu"
 import Footer from "components/organisms/Footer"
 import PhoneMenu from "components/organisms/PhoneMenu"
+import ScrollDown from "components/molecules/ScrollDown"
 
 const StyledPhoneMenu = styled(PhoneMenu)`
   transform: translateX(-100%);
@@ -26,7 +27,7 @@ const StyledMain = styled.main`
   }
 `
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, absoluteFooter }) => {
   const [isPhoneMenuOpen, setPhoneMenuOpenmet] = useState(false)
 
   const turnPhoneMenuOn = () => setPhoneMenuOpenmet(true)
@@ -39,8 +40,9 @@ const MainLayout = ({ children }) => {
       <SidebarMenu />
       <StyledMain>
         {children}
-        <Footer />
+        <Footer absolutePosition={absoluteFooter} />
       </StyledMain>
+      <ScrollDown />
       <StyledPhoneMenu
         className={clsx({ active: isPhoneMenuOpen })}
         turnMenuOffFunc={turnPhoneMenuOff}
@@ -51,6 +53,11 @@ const MainLayout = ({ children }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  absoluteFooter: PropTypes.bool,
+}
+
+MainLayout.defaultProps = {
+  absoluteFooter: false,
 }
 
 export default MainLayout

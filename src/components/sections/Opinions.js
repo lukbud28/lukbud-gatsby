@@ -27,7 +27,7 @@ const StyledContainer = styled.section`
   }
 
   @media ${response.huge} {
-    padding: 200px 250px;
+    padding: 200px 20%;
   }
 `
 

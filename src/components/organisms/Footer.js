@@ -1,12 +1,24 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { response } from "layout/theme"
+import PropTypes from "prop-types"
 
 const StyledFooter = styled.footer`
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  ${({ absolutePosition }) =>
+    absolutePosition
+      ? css`
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+        `
+      : null}
 
   @media ${response.tablet} {
     display: flex;
@@ -41,9 +53,9 @@ const StyledLink = styled.a`
   color: ${({ theme }) => theme.grey};
 `
 
-const Footer = () => {
+const Footer = ({ absolutePosition }) => {
   return (
-    <StyledFooter>
+    <StyledFooter absolutePosition={absolutePosition}>
       <StyledFooterColumn>
         <StyledLink href="https://facebook.com" target="_blank">
           <StyledFooterText>Facebook</StyledFooterText>
@@ -70,4 +82,7 @@ const Footer = () => {
   )
 }
 
+Footer.propTypes = {
+  absolutePosition: PropTypes.bool.isRequired,
+}
 export default Footer

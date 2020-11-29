@@ -91,8 +91,14 @@ const StyledSocialMedia = styled.div`
   flex-direction: column;
 `
 
-const StyledSocialMediaIcon = styled.img`
+const StyledFacebookIcon = styled(FacebookIcon)`
   width: 30px;
+  height: auto;
+`
+
+const StyledInstagramIcon = styled(InstagramIcon)`
+  width: 30px;
+  height: auto;
 `
 
 const SidebarMenu = () => {
@@ -145,14 +151,14 @@ const SidebarMenu = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledSocialMediaIcon src={InstagramIcon} />
+              <StyledInstagramIcon />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledSocialMediaIcon src={FacebookIcon} />
+              <StyledFacebookIcon />
             </a>
           </StyledSocialMedia>
         )}

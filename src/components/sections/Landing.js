@@ -8,10 +8,7 @@ import HomeAnimation from "components/molecules/HomeAnimation"
 const StyledContentContainer = styled.section`
   padding: 80px 30px 50px;
   min-height: 100vh;
-  background: linear-gradient(
-    ${({ theme }) => theme.lightgrey},
-    ${({ theme }) => theme.secondGrey}
-  );
+  background: linear-gradient(${({ theme }) => theme.lightgrey}, #777777);
 
   @media ${response.bigTablet} {
     padding: 150px 50px 100px;

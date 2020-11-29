@@ -32,7 +32,6 @@ const HomeAnimation = () => {
     const [elements] = wrapper.current.children
 
     // From top: plate, boards, base
-    const man = elements.querySelector("#man").children
     const house = elements.querySelector("#house").children
 
     const plateRight = [...elements.querySelector("#plate-right").children]
