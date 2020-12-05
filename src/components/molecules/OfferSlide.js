@@ -6,7 +6,7 @@ import { response } from "layout/theme"
 const StyledContainer = styled.div``
 
 const StyledParagraph = styled.p`
-  height: 150px;
+  height: 200px;
   font-size: 1.2rem;
 
   @media ${response.tablet} {

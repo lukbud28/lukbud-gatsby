@@ -28,10 +28,7 @@ const StyledSidebarMenu = styled.div`
     width: 80px;
     height: 100vh;
     border-right: 1px solid ${({ theme }) => theme.grey};
-    background: linear-gradient(
-      ${({ theme }) => theme.lightgrey},
-      ${({ theme }) => theme.secondGrey}
-    );
+    background: linear-gradient(${({ theme }) => theme.lightgrey}, #777777);
   }
 `
 

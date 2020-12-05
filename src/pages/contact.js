@@ -1,9 +1,18 @@
 import React from "react"
 import MainLayout from "layout/MainLayout"
+import styled from "styled-components"
+
+import ContactFormSection from "components/sections/ContactFormSection"
+
+const StyledContainer = styled.div`
+  padding: 80px 30px 50px;
+`
 
 const ContactPage = () => (
   <MainLayout>
-    <h1>Hello on contact page!</h1>
+    <StyledContainer>
+      <ContactFormSection />
+    </StyledContainer>
   </MainLayout>
 )
 
