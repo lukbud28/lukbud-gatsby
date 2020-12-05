@@ -8,6 +8,7 @@ const StyledFooter = styled.footer`
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  z-index: -100;
 
   ${({ absolutePosition }) =>
     absolutePosition

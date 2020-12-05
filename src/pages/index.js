@@ -8,7 +8,7 @@ import Opinions from "components/sections/Opinions"
 import SEO from "components/sections/SEO"
 
 const IndexPage = () => (
-  <MainLayout>
+  <MainLayout scrollDown>
     <SEO title="Home" />
     <Landing />
     <Quote />

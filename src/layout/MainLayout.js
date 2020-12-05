@@ -27,7 +27,7 @@ const StyledMain = styled.main`
   }
 `
 
-const MainLayout = ({ children, absoluteFooter }) => {
+const MainLayout = ({ children, absoluteFooter, scrollDown }) => {
   const [isPhoneMenuOpen, setPhoneMenuOpenmet] = useState(false)
 
   const turnPhoneMenuOn = () => setPhoneMenuOpenmet(true)
@@ -42,7 +42,7 @@ const MainLayout = ({ children, absoluteFooter }) => {
         {children}
         <Footer absolutePosition={absoluteFooter} />
       </StyledMain>
-      <ScrollDown />
+      {scrollDown && <ScrollDown />}
       <StyledPhoneMenu
         className={clsx({ active: isPhoneMenuOpen })}
         turnMenuOffFunc={turnPhoneMenuOff}
@@ -54,10 +54,12 @@ const MainLayout = ({ children, absoluteFooter }) => {
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
   absoluteFooter: PropTypes.bool,
+  scrollDown: PropTypes.bool,
 }
 
 MainLayout.defaultProps = {
   absoluteFooter: false,
+  scrollDown: false,
 }
 
 export default MainLayout

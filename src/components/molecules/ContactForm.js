@@ -9,6 +9,15 @@ const StyledForm = styled.form`
   align-items: flex-end;
 `
 
+const StyledInputsContainer = styled.div`
+  @media ${response.tablet} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-gap: 0 20px;
+  }
+`
+
 const StyledInput = styled.input`
   font-size: 1.2rem;
   padding: 3px 5px;
@@ -18,8 +27,18 @@ const StyledInput = styled.input`
   font-family: "Poppins";
   width: 100%;
 
+  @media ${response.tablet} {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+
+  @media ${response.desktop} {
+    font-size: 1.2rem;
+  }
+
   &.error {
-    background-color: red;
+    border-bottom: 1px solid red;
   }
 `
 
@@ -34,19 +53,38 @@ const StyledTextarea = styled.textarea`
   max-width: 100%;
   margin-top: 5px;
 
+  @media ${response.tablet} {
+    font-size: 1.4rem;
+  }
+
+  @media ${response.desktop} {
+    font-size: 1.2rem;
+  }
+
   &.error {
-    background-color: red;
+    border-bottom: 1px solid red;
   }
 `
 
 const StyledSubmit = styled.input`
-  margin-top: 10px;
-  width: 50%;
+  margin-top: 15px;
   color: white;
   background-color: ${({ theme }) => theme.blue};
   border-radius: 20px;
-  padding: 5px 30px;
+  padding: 8px 45px;
   border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  @media ${response.tablet} {
+    font-size: 1.5rem;
+    padding: 10px 60px;
+  }
+
+  &:hover {
+    background-color: black;
+  }
 `
 
 const StyledErrorSpan = styled.span``
@@ -57,33 +95,35 @@ const ContactForm = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledInput
-        name="firstName"
-        type="text"
-        className={errors.firstName && "error"}
-        placeholder="Imię"
-        ref={register({ required: true })}
-      />
-      <StyledInput
-        name="secondName"
-        type="text"
-        className={errors.secondName && "error"}
-        placeholder="Nazwisko"
-        ref={register({ required: true })}
-      />
-      <StyledInput
-        name="email"
-        type="text"
-        className={errors.email && "error"}
-        placeholder="Email"
-        ref={register({ required: true })}
-      />
-      <StyledInput
-        name="phone"
-        type="text"
-        placeholder="Telefon"
-        ref={register()}
-      />
+      <StyledInputsContainer>
+        <StyledInput
+          name="firstName"
+          type="text"
+          className={errors.firstName && "error"}
+          placeholder="Imię"
+          ref={register({ required: true })}
+        />
+        <StyledInput
+          name="secondName"
+          type="text"
+          className={errors.secondName && "error"}
+          placeholder="Nazwisko"
+          ref={register({ required: true })}
+        />
+        <StyledInput
+          name="email"
+          type="text"
+          className={errors.email && "error"}
+          placeholder="Email"
+          ref={register({ required: true, pattern: /\S+@\S+\.\S+/ })}
+        />
+        <StyledInput
+          name="phone"
+          type="text"
+          placeholder="Telefon"
+          ref={register()}
+        />
+      </StyledInputsContainer>
       <StyledTextarea
         name="message"
         type="text"
