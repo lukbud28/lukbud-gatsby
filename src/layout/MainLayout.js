@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styled, { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider, css } from "styled-components"
 import GlobalStyles from "layout/GlobalStyles"
 import { theme, response } from "layout/theme"
 import PropTypes from "prop-types"
@@ -25,6 +25,12 @@ const StyledMain = styled.main`
   @media ${response.desktop} {
     margin-left: 80px;
   }
+
+  ${({ blackTheme }) =>
+    blackTheme &&
+    css`
+      background-colors: #111111;
+    `}
 `
 
 const MainLayout = ({ children, absoluteFooter, scrollDown }) => {
