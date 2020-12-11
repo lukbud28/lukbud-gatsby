@@ -12,13 +12,30 @@ const StyledContainer = styled.div`
 const GalleryImages = () => {
   const [imagePreviewSource, setImagePreviewSource] = useState(false)
 
-  const OpenImagesPreview = (fluid, path) => {
+  const OpenImagesPreview = (path, fluid) => {
     setImagePreviewSource({
       indexInArray: arrayOfPhotoes.indexOf(path),
       src: path,
       fluid,
     })
   }
+
+  const nextPrevImage = operator => {
+    setImagePreviewSource(prevState => {
+      const count = prevState.indexInArray + operator
+
+      if (count !== 0 && count !== arrayOfPhotoes.length) {
+        return {
+          indexInArray: count,
+          src: arrayOfPhotoes[count],
+          fluid: allFile.nodes[count].childImageSharp.fluid,
+        }
+      }
+      return prevState
+    })
+  }
+
+  const closePreview = () => setImagePreviewSource(false)
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -48,7 +65,7 @@ const GalleryImages = () => {
             role="presentation"
             onClick={
               () =>
-                OpenImagesPreview(node.childImageSharp.fluid, node.relativePath)
+                OpenImagesPreview(node.relativePath, node.childImageSharp.fluid)
               // eslint-disable-next-line react/jsx-curly-newline
             }
             key={node.relativePath}
@@ -58,9 +75,11 @@ const GalleryImages = () => {
         )
       })}
       {imagePreviewSource !== false && (
-        <ImagePreview>
-          <Img fluid={imagePreviewSource.fluid} />
-        </ImagePreview>
+        <ImagePreview
+          imageSource={imagePreviewSource.fluid}
+          switchImageFunc={nextPrevImage}
+          closePreviewFunc={closePreview}
+        />
       )}
     </StyledContainer>
   )
