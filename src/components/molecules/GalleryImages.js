@@ -2,11 +2,25 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { response } from "layout/theme"
+import Masonry from "react-responsive-masonry"
 
 import ImagePreview from "components/molecules/ImagePreview"
 
 const StyledContainer = styled.div`
   margin-top: 20px;
+
+  @media ${response.tablet} {
+    padding: 0 40px;
+  }
+
+  @media ${response.desktop} {
+    padding: 0 100px;
+  }
+
+  @media ${response.huge} {
+    padding: 0 200px;
+  }
 `
 
 const GalleryImages = () => {
@@ -58,29 +72,35 @@ const GalleryImages = () => {
 
   return (
     <StyledContainer>
-      {allFile.nodes.map(node => {
-        arrayOfPhotoes.push(node.relativePath)
-        return (
-          <div
-            role="presentation"
-            onClick={
-              () =>
-                OpenImagesPreview(node.relativePath, node.childImageSharp.fluid)
-              // eslint-disable-next-line react/jsx-curly-newline
-            }
-            key={node.relativePath}
-          >
-            <Img fluid={node.childImageSharp.fluid} />
-          </div>
-        )
-      })}
-      {imagePreviewSource !== false && (
-        <ImagePreview
-          imageSource={imagePreviewSource.fluid}
-          switchImageFunc={nextPrevImage}
-          closePreviewFunc={closePreview}
-        />
-      )}
+      <Masonry columnsCount={window.innerWidth > 767 ? 3 : 1} gutter={10}>
+        {allFile.nodes.map(node => {
+          arrayOfPhotoes.push(node.relativePath)
+          return (
+            <div
+              role="presentation"
+              onClick={
+                () =>
+                  OpenImagesPreview(
+                    node.relativePath,
+                    node.childImageSharp.fluid
+                  )
+                // eslint-disable-next-line react/jsx-curly-newline
+              }
+              key={node.relativePath}
+              className="gallery-item"
+            >
+              <Img fluid={node.childImageSharp.fluid} />
+            </div>
+          )
+        })}
+        {imagePreviewSource !== false && (
+          <ImagePreview
+            imageSource={imagePreviewSource.fluid}
+            switchImageFunc={nextPrevImage}
+            closePreviewFunc={closePreview}
+          />
+        )}
+      </Masonry>
     </StyledContainer>
   )
 }

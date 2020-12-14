@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { response } from "layout/theme"
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -10,6 +11,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
 `
 
 const StyledImage = styled(Img)`
@@ -34,14 +36,45 @@ const StyledImageSwitchButton = styled.button`
   font-size: 5rem;
 `
 
+const StyledCancel = styled.button`
+  width: 35px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  @media ${response.tablet} {
+    width: 45px;
+    top: 20px;
+  }
+`
+
+const StyledCancelArm = styled.div`
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  position: relative;
+  transform: rotate(45deg);
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    transform: rotate(-90deg);
+  }
+`
+
 const ImagePreview = ({ imageSource, switchImageFunc, closePreviewFunc }) => {
   return (
-    <StyledContainer
-      onClick={e => {
-        e.stopPropagation()
-        closePreviewFunc()
-      }}
-    >
+    <StyledContainer>
+      <StyledCancel onClick={closePreviewFunc}>
+        <StyledCancelArm />
+      </StyledCancel>
       <StyledImage fluid={imageSource} />
       <StyledControlsWrapper>
         <StyledImageSwitchButton onClick={() => switchImageFunc(-1)}>
