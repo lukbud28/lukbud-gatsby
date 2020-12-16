@@ -1,19 +1,65 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { response } from "layout/theme"
 
-const StyledContainer = styled.div``
+const StyledContainer = styled.div`
+  max-width: 700px;
+  margin: auto;
+`
 
 const StyledHeader = styled.h3`
   font-size: 1.2rem;
+
+  @media ${response.tablet} {
+    font-size: 1.7rem;
+  }
+
+  @media ${response.desktop} {
+    font-size: 1.6rem;
+  }
+
+  @media ${response.bigDesktop} {
+  }
 `
 
 const StyledParagraph = styled.p`
   font-size: 1.1rem;
+
+  @media ${response.tablet} {
+    font-size: 1.3rem;
+  }
 `
 
-const StyledImage = styled.img``
+const StyledImage = styled(Img)`
+  margin: 20px 0;
+
+  @media ${response.tablet} {
+    margin: 40px 0;
+  }
+
+  @media ${response.desktop} {
+    /* max-width: 70%; */
+  }
+`
 
 const About = () => {
+  const { file } = useStaticQuery(
+    graphql`
+      query {
+        file(name: { eq: "about" }) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+          relativePath
+        }
+      }
+    `
+  )
+
   return (
     <StyledContainer>
       <StyledHeader>
@@ -22,7 +68,7 @@ const About = () => {
         najlepsze możliwe rozwiązania w tej dziedzinie, gdyż chcemy spełniać
         pokładane w nas oczekiwania.
       </StyledHeader>
-      <StyledImage />
+      <StyledImage fluid={file.childImageSharp.fluid} />
       <StyledParagraph>
         Pomaga nam w tym wieloletnie doświadczenie. Zatrudnieni pracownicy są
         odpowiednio wykwalifikowani i posiadają wszelkie uprawnienia do pracy w

@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { response } from "layout/theme"
+import firebase from "gatsby-plugin-firebase"
 
 import OpinionsCard from "components/molecules/OpinionsCard"
 import OpinionsForm from "components/molecules/OpinionsForm"
@@ -66,38 +67,36 @@ const StyledFormOpenButton = styled.button`
   }
 `
 
-const Data = [
-  {
-    points: "5",
-    comment:
-      "They work with my client to build a space that reflects their own unique style.",
-    date: "12.07.2020",
-    author: "Dariusz K.",
-  },
-  {
-    points: "1",
-    comment: "You are funny company!",
-    date: "176.07.2020",
-    author: "Funny guy",
-  },
-  {
-    points: "10",
-    comment: "Wow! Awesome work by you",
-    date: "27.11.2020",
-    author: "Happy client",
-  },
-]
-
 const Opinions = () => {
   const [isFormOpen, setFormOpenmet] = useState(false)
+  const [opinionsData, setOpinionsData] = useState()
+
+  useEffect(() => {
+    const db = firebase.firestore()
+
+    db.collection("opinions")
+      .orderBy("date", "desc")
+      .limit(3)
+      .get()
+      .then(result => {
+        const opinions = []
+
+        result.forEach(res => {
+          opinions.push({ id: res.id, ...res.data() })
+        })
+
+        setOpinionsData(opinions)
+      })
+  }, [])
 
   return (
     <StyledContainer>
       <StyledOpinionsTitle>Opinie o naszej firmie:</StyledOpinionsTitle>
       <StyledOpinionsContainer>
-        {Data.map(opinion => (
-          <OpinionsCard data={opinion} key={opinion.author} />
-        ))}
+        {opinionsData &&
+          opinionsData.map(opinion => (
+            <OpinionsCard data={opinion} key={opinion.id} />
+          ))}
       </StyledOpinionsContainer>
       <StyledFormOpenButton onClick={() => setFormOpenmet(!isFormOpen)}>
         {isFormOpen ? "Nie chcę dodawać opinii" : "Dodaj opinię"}

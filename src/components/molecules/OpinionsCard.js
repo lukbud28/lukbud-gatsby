@@ -63,13 +63,15 @@ const StyledCommentInformationsText = styled.h5`
 `
 
 const OpinionsCard = ({ data }) => {
+  const stringDate = new Date(data.date.seconds * 1000).toLocaleString()
+
   return (
     <StyledContainer>
       <StyledPoints>{data.points}/5</StyledPoints>
       <StyledComment>{data.comment}</StyledComment>
       <StyledCommentInformations>
         <StyledCommentInformationsText>
-          {data.date}
+          {stringDate.substr(0, stringDate.indexOf(","))}
         </StyledCommentInformationsText>
         <StyledCommentInformationsText>
           {data.author}
@@ -80,7 +82,13 @@ const OpinionsCard = ({ data }) => {
 }
 
 OpinionsCard.propTypes = {
-  data: PropTypes.objectOf(PropTypes.string).isRequired,
+  data: PropTypes.shape({
+    author: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    points: PropTypes.number.isRequired,
+    date: PropTypes.objectOf(PropTypes.number).isRequired,
+  }).isRequired,
 }
 
 export default OpinionsCard

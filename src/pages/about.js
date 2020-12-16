@@ -7,6 +7,18 @@ import About from "components/sections/About"
 
 const StyledContainer = styled.div`
   padding: 80px 30px 50px;
+
+  @media ${response.tablet} {
+    padding: 130px 100px 50px;
+  }
+
+  @media ${response.desktop} {
+    padding: 140px 200px 60px;
+  }
+
+  @media ${response.huge} {
+    padding: 180px 300px 120px;
+  }
 `
 
 const AboutPage = () => (

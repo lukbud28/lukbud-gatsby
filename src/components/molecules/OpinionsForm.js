@@ -2,6 +2,7 @@ import React from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 import { response } from "layout/theme"
+import firebase from "gatsby-plugin-firebase"
 
 const StyledForm = styled.form`
   margin-top: 20px;
@@ -86,8 +87,20 @@ const StyledErrorSpan = styled.span`
 `
 
 const OpinionsForm = () => {
+  const db = firebase.firestore()
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+    db.collection("opinions")
+      .doc(Math.random().toString(36).substr(2, 9))
+      .set({
+        points: Number(data.points),
+        comment: data.comment,
+        date: new Date(),
+        author: data.sign,
+      })
+      .then(() => console.log("Udało się!"))
+      .catch(err => console.log(err))
+  }
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -95,14 +108,14 @@ const OpinionsForm = () => {
         name="points"
         type="number"
         className={errors.points && "error"}
-        placeholder="Points in scale 1-5"
+        placeholder="Punkty w skali 1-5"
         ref={register({ required: true, max: 5, min: 1 })}
       />
       <StyledInput
         name="sign"
         type="text"
         className={errors.sign && "error"}
-        placeholder="Your sign"
+        placeholder="Twój podpis"
         ref={register({ required: true, maxLength: 20 })}
       />
       <StyledTextarea
@@ -110,7 +123,7 @@ const OpinionsForm = () => {
         type="text"
         rows="5"
         className={errors.comment && "error"}
-        placeholder="Your comment"
+        placeholder="Komentarz"
         ref={register({ required: true, maxLength: 100 })}
       />
       <StyledSubmit type="submit" />

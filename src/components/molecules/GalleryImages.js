@@ -72,7 +72,7 @@ const GalleryImages = () => {
 
   return (
     <StyledContainer>
-      <Masonry columnsCount={window.innerWidth > 767 ? 3 : 1} gutter={10}>
+      <Masonry columnsCount={window.innerWidth > 767 ? 3 : 1} gutter="10">
         {allFile.nodes.map(node => {
           arrayOfPhotoes.push(node.relativePath)
           return (

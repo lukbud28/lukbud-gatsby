@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 import { response } from "layout/theme"
+import axios from "axios"
 
 const StyledForm = styled.form`
   display: flex;
@@ -87,11 +88,25 @@ const StyledSubmit = styled.input`
   }
 `
 
-const StyledErrorSpan = styled.span``
+const StyledErrorSpan = styled.span`
+  font-size: 1.3rem;
+  margin-top: 15px;
+`
 
 const ContactForm = () => {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => console.log(data)
+
+  const [formMessage, setFormMessage] = useState(false)
+
+  const onSubmit = data =>
+    axios
+      .post("https://formspree.io/f/xjvpeevw", data)
+      .then(result => setFormMessage("Przesłano formularz"))
+      .catch(err =>
+        setFormMessage(
+          "Niestety, nie możemy przesłać teraz formularza. Spróbuj ponownie później"
+        )
+      )
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -136,6 +151,7 @@ const ContactForm = () => {
       {Object.keys(errors).length > 0 && (
         <StyledErrorSpan>Ooops, pojawiły się jakieś błędy</StyledErrorSpan>
       )}
+      {formMessage && <StyledErrorSpan>{formMessage}</StyledErrorSpan>}
     </StyledForm>
   )
 }

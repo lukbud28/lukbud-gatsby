@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { breakpoints, response } from "layout/theme"
 import { Link } from "gatsby"
 import clsx from "clsx"
-import PropTypes from "prop-types"
 
 // imports
 import Logo from "assets/logos/logo.png"

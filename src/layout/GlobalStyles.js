@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
+  :root {
+    min-height: 100vh;
+  }
+
   html {
     box-sizing: border-box;
     font-size: 10px;

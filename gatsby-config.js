@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -54,6 +55,20 @@ module.exports = {
       options: {
         rule: {
           include: /svg/,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyBBc-_Zr_sbgskEHk5WdNByD81diWklYoU",
+          authDomain: "lukbud-gatsby.firebaseapp.com",
+          projectId: "lukbud-gatsby",
+          storageBucket: "lukbud-gatsby.appspot.com",
+          messagingSenderId: "715440523262",
+          appId: "1:715440523262:web:0670b355f3c02e3e3ee2af",
+          measurementId: "G-TLC8NZJ0RE",
         },
       },
     },
