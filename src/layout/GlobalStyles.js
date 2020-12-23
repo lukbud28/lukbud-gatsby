@@ -1,10 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
-  :root {
-    min-height: 100vh;
-  }
-
   html {
     box-sizing: border-box;
     font-size: 10px;
@@ -32,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     font-family: 'Poppins';
     border: none;
+  }
+
+  main {
+    min-height: 100vh;
   }
 
   ul {

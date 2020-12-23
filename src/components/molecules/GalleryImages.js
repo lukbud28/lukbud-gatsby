@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -70,9 +70,19 @@ const GalleryImages = () => {
 
   const arrayOfPhotoes = []
 
+  const [windowWidth, setWindowWidth] = useState(1000)
+
+  useEffect(() => {
+    setWindowWidth(windowWidth)
+
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth)
+    })
+  }, [windowWidth])
+
   return (
     <StyledContainer>
-      <Masonry columnsCount={window.innerWidth > 767 ? 3 : 1} gutter="10">
+      <Masonry columnsCount={windowWidth > 767 ? 3 : 1} gutter="10px">
         {allFile.nodes.map(node => {
           arrayOfPhotoes.push(node.relativePath)
           return (

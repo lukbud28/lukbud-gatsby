@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { breakpoints, response } from "layout/theme"
 import { Link } from "gatsby"
@@ -99,16 +99,21 @@ const StyledInstagramIcon = styled(InstagramIcon)`
 `
 
 const SidebarMenu = () => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
-  const [pageYOffset, setPageYOffset] = useState(window.pageYOffset)
+  const [viewportWidth, setViewportWidth] = useState(null)
+  const [pageYOffset, setPageYOffset] = useState(null)
 
-  window.addEventListener("resize", () => {
+  useEffect(() => {
     setViewportWidth(window.innerWidth)
-  })
-
-  window.addEventListener("scroll", () => {
     setPageYOffset(window.pageYOffset)
-  })
+
+    window.addEventListener("resize", () => {
+      setViewportWidth(window.innerWidth)
+    })
+
+    window.addEventListener("scroll", () => {
+      setPageYOffset(window.pageYOffset)
+    })
+  }, [])
 
   return (
     <StyledSidebarMenu>

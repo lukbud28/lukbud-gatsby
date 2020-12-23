@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { response, breakpoints } from "layout/theme"
@@ -40,11 +40,15 @@ const StyledLink = styled(Link)`
 `
 
 const MainMenu = ({ turnMenuOnFunc }) => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+  const [viewportWidth, setViewportWidth] = useState(null)
 
-  window.addEventListener("resize", () => {
+  useEffect(() => {
     setViewportWidth(window.innerWidth)
-  })
+
+    window.addEventListener("resize", () => {
+      setViewportWidth(window.innerWidth)
+    })
+  }, [])
 
   return (
     <StyledNavigation>

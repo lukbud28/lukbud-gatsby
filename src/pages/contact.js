@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import MainLayout from "layout/MainLayout"
 import styled from "styled-components"
 import { response } from "layout/theme"
@@ -35,11 +35,15 @@ const StyledContainer = styled.div`
 `
 
 const ContactPage = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(null)
 
-  window.addEventListener("resize", () => {
-    setWindowWidth(window.innerWidth)
-  })
+  useEffect(() => {
+    setWindowWidth(windowWidth)
+
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth)
+    })
+  }, [windowWidth])
 
   return (
     <MainLayout absoluteFooter={windowWidth >= 1439}>
