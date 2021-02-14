@@ -120,9 +120,9 @@ const StyledMenuItem = styled.li`
 
 const Data = [
   {
-    name: "Pomiar i wycena",
+    name: "Darmowy pomiar i wycena",
     content:
-      "Oferujemy Państwu usługę bezpłatnego pomiaru i wyceny na terenie powiatu.: Podkarpackiego, Świętokrzyskiego oraz Lubelskiego. Usługa obejmuje: przyjazd naszego doradcy na wskazany przez Państwa adres, w uzgodnionym wcześniej terminie pomoc w doborze produktów, prezentację możliwych rozwiązań wykonanie profesjonalnego pomiaru, gwarantującego właściwą kalkulację wyceny przygotowanie oferty",
+      "Oferujemy Państwu usługę bezpłatnego pomiaru i wyceny na terenie powiatu.: Podkarpackiego, Świętokrzyskiego oraz Lubelskiego Usługa obejmuje: przyjazd naszego doradcy na wskazany przez Państwa adres, w uzgodnionym wcześniej terminie",
   },
   {
     name: "Montaż obróbek blacharskich",
@@ -132,22 +132,22 @@ const Data = [
   {
     name: "Krycie i ocieplanie dachód",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ut nulla sunt quam laboriosam, quidem ipsam nemo ad, dolore dolorem quibusdam nostrum, reiciendis perferendis odio modi quo ratione in eum.",
+      "Zajmujemy się kryciem dachów blacho dachówką, blachodachówką modułową czy blachami trapezowymi, rekomendujemy wiodących producentów na Polskim rynku.",
   },
   {
     name: "Montaż okien dachowych",
     content:
-      "Oferujemy profesjonalny montaż okien i wyłazów w nowych jak również w istniejących pokryciach dachowych. Naszym rekomendowanym wykonawcą jest firma Velux.(szukam żeby coś dopisać)",
+      "Oferujemy profesjonalny montaż okien i wyłazów w nowych jak również w istniejących pokryciach dachowych. Jesteśmy rekomendowanym wykonawcą firmy Velux i Fakro.",
   },
   {
     name: "Montaż podbitek dachowych i systemów rynnowych.",
     content:
-      "Podbitki dachowe  to idealne rozwiązanie na wykończenie dachu. Produkowane w wersji plastikowej, aluminiowej i stalowej są szybkie w montażu i nie posiadają widocznych wkrętów montażowych.(możliwe że będzie zmienione)",
+      "Wykonujemy podbitki drewniane z PCV, oraz panele z blachy stalowej. Wykonujemy również montaż systemów rynnowych od wiodących producentów na Polskim rynku.",
   },
   {
     name: "Montaż i adaptacja starych konstrukcji dachowych",
     content:
-      "Oferujemy transport do klienta oraz usługi montażowe drewnianych konstrukcji dachowych . wykonujemy montaż drewnianych konstrukcji dachowych, podbitek dachowych czy adaptujemy stare konstrukcje dachowe. (będzie dopisane)",
+      "Oferujemy transport do klienta oraz usługi montażowe drewnianych konstrukcji dachowych. Wykonujemy montaż drewnianych konstrukcji dachowych, podbitek dachowych, adaptujemy również  stare konstrukcje dachowe.",
   },
 ]
 
