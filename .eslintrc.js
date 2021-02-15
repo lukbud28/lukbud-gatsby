@@ -1,5 +1,5 @@
 module.exports = {
-  extends: [`airbnb`, `airbnb/hooks`, `react-app`, `prettier`],
+  extends: [`airbnb`, `airbnb/hooks`, `prettier`],
   globals: {
     __PATH_PREFIX__: true,
     document: true,

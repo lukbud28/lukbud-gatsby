@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { response } from "layout/theme"
 
 import OfferSlider from "components/sections/OfferSlider"
+import SEO from "components/sections/SEO"
 
 const StyledContainer = styled.div`
   padding: 80px 30px 50px;
@@ -23,6 +24,7 @@ const StyledContainer = styled.div`
 
 const OfferPage = () => (
   <MainLayout absoluteFooter>
+    <SEO title="Oferta" />
     <StyledContainer>
       <OfferSlider />
     </StyledContainer>

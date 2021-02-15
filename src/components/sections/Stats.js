@@ -30,18 +30,18 @@ const StyledContainer = styled.section`
 const Data = [
   {
     id: 0,
-    points: "11",
-    pointsDiscription: "renera entera errato regenta",
+    points: "156",
+    pointsDiscription: "Zbudowane dachy",
   },
   {
     id: 1,
-    points: "158",
-    pointsDiscription: "lorem ipsum dolor sit amet",
+    points: "156",
+    pointsDiscription: "Zadowolonych klientów",
   },
   {
     id: 2,
-    points: "92",
-    pointsDiscription: "estella esta es la violla",
+    points: "5",
+    pointsDiscription: "Pracowników",
   },
   {
     id: 3,

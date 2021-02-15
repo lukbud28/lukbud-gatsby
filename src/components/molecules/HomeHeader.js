@@ -77,13 +77,13 @@ const HomeHeader = () => {
   return (
     <StyledContainer>
       <StyledH1>
-        Tworzymy domy z <Color color="blue">pasji</Color>, lorem ipsum dolor sit
-        amet
+        Oferujemy kompleksowe <Color color="blue">usługi</Color>w zakresie
+        wykonywania pokryć dachowych
       </StyledH1>
       <StyledP>
-        Whether you&apos; re a <Color color="blue">Fortune 500</Color> or a
-        startup in stealth mode - we give our clients the creative, technical
-        and <Color color="blue">business</Color> talent they need.
+        Do każdego zlecenia podchodzimy w pełni{" "}
+        <Color color="blue">indywidualnie</Color> i staramy się dopasować do
+        każdego klienta.
       </StyledP>
       <Link to="/about">
         <StyledButton

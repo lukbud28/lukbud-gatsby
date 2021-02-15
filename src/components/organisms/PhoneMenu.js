@@ -84,16 +84,16 @@ const PhoneMenu = ({ className, turnMenuOffFunc }) => {
           Home
         </StyledLink>
         <StyledLink to="/about" activeClassName="active">
-          About
+          O nas
         </StyledLink>
         <StyledLink to="/offer" activeClassName="active">
-          Offer
+          Oferta
         </StyledLink>
         <StyledLink to="/gallery" activeClassName="active">
-          Gallery
+          Galeria
         </StyledLink>
         <StyledLink to="/contact" activeClassName="active">
-          Contact
+          Kontakt
         </StyledLink>
       </StyledNavList>
     </StyledContainer>

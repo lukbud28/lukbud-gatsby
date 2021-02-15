@@ -131,16 +131,16 @@ const SidebarMenu = () => {
               Home
             </StyledMenuLink>
             <StyledMenuLink to="/about" activeClassName="active">
-              About
+              O nas
             </StyledMenuLink>
             <StyledMenuLink to="/offer" activeClassName="active">
-              Offer
+              Oferta
             </StyledMenuLink>
             <StyledMenuLink to="/gallery" activeClassName="active">
-              Gallery
+              Galeria
             </StyledMenuLink>
             <StyledMenuLink to="/contact" activeClassName="active">
-              Contact
+              Kontakt
             </StyledMenuLink>
           </StyledMenu>
         )}

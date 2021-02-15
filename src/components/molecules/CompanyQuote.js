@@ -35,9 +35,10 @@ const CompanyQuote = () => {
   return (
     <StyledContainer>
       <StyledQuote>
-        I work with my client to build a space that reflects their own unique
-        style. Whether it&apos;s residential or commercial, it should be 100%
-        you.
+        Naszym głównym zajęciem i profilem działalności jest kompleksowe
+        świadczenie usług dekarskich. Pragniemy oferować swoim Klientom jedynie
+        najlepsze możliwe rozwiązania w tej dziedzinie, gdyż chcemy spełniać
+        pokładane w nas oczekiwania.
       </StyledQuote>
       <StyledLink to="/about">zobacz więcej o nas</StyledLink>
     </StyledContainer>

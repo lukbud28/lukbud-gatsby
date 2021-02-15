@@ -5,6 +5,7 @@ import { response } from "layout/theme"
 
 import ContactFormSection from "components/sections/ContactFormSection"
 import ContactInformations from "components/sections/ContactInformations"
+import SEO from "components/sections/SEO"
 
 const StyledContainer = styled.div`
   padding: 80px 30px 50px;
@@ -47,6 +48,7 @@ const ContactPage = () => {
 
   return (
     <MainLayout absoluteFooter={windowWidth >= 1439}>
+      <SEO title="Kontakt" />
       <StyledContainer>
         <ContactInformations />
         <ContactFormSection />

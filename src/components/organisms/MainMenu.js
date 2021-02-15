@@ -61,22 +61,22 @@ const MainMenu = ({ turnMenuOnFunc }) => {
           </StyledMenuListItem>
           <StyledMenuListItem>
             <StyledLink to="/about" activeClassName="active">
-              About
+              O nas
             </StyledLink>
           </StyledMenuListItem>
           <StyledMenuListItem>
             <StyledLink to="/offer" activeClassName="active">
-              Offer
+              Oferta
             </StyledLink>
           </StyledMenuListItem>
           <StyledMenuListItem>
             <StyledLink to="/gallery" activeClassName="active">
-              Gallery
+              Galeria
             </StyledLink>
           </StyledMenuListItem>
           <StyledMenuListItem>
             <StyledLink to="/contact" activeClassName="active">
-              Contact
+              Kontakt
             </StyledLink>
           </StyledMenuListItem>
         </StyledMenuList>
