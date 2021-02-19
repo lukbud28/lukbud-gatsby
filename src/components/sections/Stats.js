@@ -45,8 +45,8 @@ const Data = [
   },
   {
     id: 3,
-    points: "56",
-    pointsDiscription: "it's an amazing time of us",
+    points: "156",
+    pointsDiscription: "Osiągniecia firmy",
   },
 ]
 

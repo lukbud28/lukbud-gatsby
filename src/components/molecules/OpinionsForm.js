@@ -98,7 +98,7 @@ const OpinionsForm = () => {
         date: new Date(),
         author: data.sign,
       })
-      .then(() => console.log("Udało się!"))
+      .then(() => console.log("Dodano opinię"))
       .catch(err => console.log(err))
   }
 

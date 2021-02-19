@@ -3,7 +3,8 @@ const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `Lukbud gatsby site`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Świadczymy kompleksowe usługi dekarskie. Zajmujemy się kompleksowym wykonywaniem pokryć
+    dachowych z własnych materiałów lub powierzonych przez klienta.`,
     author: `Igor Patro`,
   },
   plugins: [

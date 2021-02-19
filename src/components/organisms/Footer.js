@@ -58,10 +58,13 @@ const Footer = ({ absolutePosition }) => {
   return (
     <StyledFooter absolutePosition={absolutePosition}>
       <StyledFooterColumn>
-        <StyledLink href="https://facebook.com" target="_blank">
+        <StyledLink
+          href="https://www.facebook.com/LukBud-Łukasz-Klecha-113639390763394"
+          target="_blank"
+        >
           <StyledFooterText>Facebook</StyledFooterText>
         </StyledLink>
-        <StyledLink href="https://instagram.com" target="_blank">
+        <StyledLink href="https://www.instagram.com/lukbud_kl/" target="_blank">
           <StyledFooterText>Instagram</StyledFooterText>
         </StyledLink>
       </StyledFooterColumn>
@@ -70,8 +73,8 @@ const Footer = ({ absolutePosition }) => {
         <StyledFooterText>gm. Jeżowe</StyledFooterText>
       </StyledFooterColumn>
       <StyledFooterColumn>
-        <StyledFooterText>lukasz@lukbud.site</StyledFooterText>
-        <StyledFooterText>(+48) 555 555 234</StyledFooterText>
+        <StyledFooterText>lukbud.kl@wp.pl</StyledFooterText>
+        <StyledFooterText>(+48) 669 277 943</StyledFooterText>
       </StyledFooterColumn>
       <StyledFooterColumn>
         <StyledFooterText>

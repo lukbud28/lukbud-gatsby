@@ -149,14 +149,14 @@ const SidebarMenu = () => {
         {viewportWidth >= breakpoints.desktop && (
           <StyledSocialMedia>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/lukbud_kl/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <StyledInstagramIcon />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/LukBud-Łukasz-Klecha-113639390763394"
               target="_blank"
               rel="noopener noreferrer"
             >

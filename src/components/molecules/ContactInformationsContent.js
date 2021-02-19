@@ -62,8 +62,8 @@ const ContactInformationsContent = () => {
           <StyledMethodKey>Adres:</StyledMethodKey>
         </StyledMethodsWrapper>
         <StyledMethodsWrapper>
-          <StyledMethodValue>(+48) 555 555 555</StyledMethodValue>
-          <StyledMethodValue>lukasz@lukbud.pl</StyledMethodValue>
+          <StyledMethodValue>(+48) 669 277 943</StyledMethodValue>
+          <StyledMethodValue>lukbud.kl@wp.pl</StyledMethodValue>
           <StyledMethodValue>
             37-430 Stary Nart,
             <br />
