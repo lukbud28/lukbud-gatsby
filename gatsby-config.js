@@ -2,7 +2,7 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Lukbud gatsby site`,
+    title: `Lukbud`,
     description: `Świadczymy kompleksowe usługi dekarskie. Zajmujemy się kompleksowym wykonywaniem pokryć
     dachowych z własnych materiałów lub powierzonych przez klienta.`,
     author: `Igor Patro`,
@@ -23,13 +23,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `lukbud-gatsby`,
+        name: `Lukbud`,
         short_name: `lukbud`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/assets/icons/instagram.svg`,
+        icon: `src/assets/logos/logo.png`,
       },
     },
     {
