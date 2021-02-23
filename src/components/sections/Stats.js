@@ -30,12 +30,12 @@ const StyledContainer = styled.section`
 const Data = [
   {
     id: 0,
-    points: "156",
+    points: "+1000",
     pointsDiscription: "Zbudowane dachy",
   },
   {
     id: 1,
-    points: "156",
+    points: "+1000",
     pointsDiscription: "Zadowolonych klientów",
   },
   {
@@ -45,7 +45,7 @@ const Data = [
   },
   {
     id: 3,
-    points: "156",
+    points: "+1000",
     pointsDiscription: "Osiągniecia firmy",
   },
 ]
