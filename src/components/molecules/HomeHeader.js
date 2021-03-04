@@ -77,7 +77,7 @@ const HomeHeader = () => {
   return (
     <StyledContainer>
       <StyledH1>
-        Oferujemy kompleksowe <Color color="blue">usługi</Color>w zakresie
+        Oferujemy kompleksowe <Color color="blue">usługi</Color> w zakresie
         wykonywania pokryć dachowych
       </StyledH1>
       <StyledP>
