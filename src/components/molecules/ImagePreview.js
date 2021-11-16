@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 import styled from "styled-components"
 import { response } from "layout/theme"
 
@@ -15,6 +15,8 @@ const StyledContainer = styled.div`
 `
 
 const StyledImage = styled(Img)`
+  width: auto;
+  height: auto;
   max-width: 80%;
   max-height: 80%;
   position: fixed;
@@ -75,7 +77,7 @@ const ImagePreview = ({ imageSource, switchImageFunc, closePreviewFunc }) => {
       <StyledCancel onClick={closePreviewFunc}>
         <StyledCancelArm />
       </StyledCancel>
-      <StyledImage fluid={imageSource} />
+      <StyledImage fluid={imageSource} objectFit="contain" />
       <StyledControlsWrapper>
         <StyledImageSwitchButton onClick={() => switchImageFunc(-1)}>
           {"<"}
